@@ -1,5 +1,5 @@
 # c language 
-achieve command : cd help exit (first version)
+achieve command : cd help exit (first version) 没有实现管道
 
 if user types other commands by using execvp() syscall
 
