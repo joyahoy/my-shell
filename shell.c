@@ -75,7 +75,7 @@ char ** mysh_split_line(char *line){
 }
 
 int mysh_launch(char **args){
-  pid_t wpid, pid;
+  pid_t pid;
   pid = fork();
   int status;
   if(pid < 0){
@@ -87,7 +87,7 @@ int mysh_launch(char **args){
     exit(EXIT_FAILURE);
   }else{
     do{
-      wpid = waitpid(pid, &status, WUNTRACED);
+      waitpid(pid, &status, WUNTRACED);
     }while(!WIFEXITED(status) && !WIFSIGNALED(status));
   }
   return 1;
